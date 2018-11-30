@@ -14,6 +14,7 @@ export class PostService {
   constructor(private http: HttpClient, private router: Router) {
   }
 
+  //posts
   getPosts(postsPerPage: number, currentPage: number) {
     const queryParams = `?pageSize=${postsPerPage}&page=${currentPage}`;
     this.http.get<{messgae: string, posts: any, maxPosts: number}>('http://192.168.0.136:3000:3000/api/posts' + queryParams)
